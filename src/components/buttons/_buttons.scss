@@ -1,0 +1,68 @@
+.button {
+    border-radius: $border-radius;
+    border: 2px solid transparent;
+    background: $white;
+    color: $black;
+    font-size: 18px;
+    padding: 8px 20px; 
+    font-weight: 600;
+    margin: 0 15px;
+    cursor: pointer;
+    @include transition;
+    @include events {
+        color: $white;
+        background: none;
+        border: 2px solid $white;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__inner {
+        position: absolute;
+        z-index: 9999;
+        min-width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 10px);
+        background: $white;
+        border-radius: $border-radius;
+        text-align: center;
+        padding: 15px;
+        &--themes {
+            display: flex;
+        }
+        &--card {
+            box-shadow: 0px 0px 10px rgba(30, 30, 30, 0.2);
+        }
+    }
+    &__inner-text {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    &--add {
+
+    }
+    &--disabled {
+
+    }
+    &--delete {
+        background: $red;
+        color: $white;
+        @include events {
+            color: $black;
+            background: none;
+            border: 2px solid $red;
+        }
+    }
+    &--save {
+        background: $green;
+        color: $white;
+        min-width: 100px;
+        @include events {
+            color: $black;
+            background: none;
+            border: 2px solid $green;
+        }
+    }
+}

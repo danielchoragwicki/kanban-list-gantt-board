@@ -1,0 +1,92 @@
+// Tylko podglądowe
+
+
+
+// .radio {
+    
+// }
+
+// .d-board {
+//     height: 200px;
+//     width: 200px;
+//     &__title {
+        
+//     }
+//     // Avaiable board
+//     &__link {
+//         @include flex;
+//         flex-direction: column;
+//         width: 100%;
+//         height: 100%;
+//         border: 5px solid red; 
+//         border-radius: 20px;
+//     }
+//     &__stats {
+
+//     }
+//     &__count {
+
+//     }
+//     // New board
+//     &__button {
+//         @include flex;
+//         flex-direction: column;
+//         width: 100%;
+//         height: 100%;
+//         padding: 0;
+//         border-radius: 20px;
+//         background: white;
+//         border: 5px dashed red; 
+//     }
+//     &__icon {
+
+//     }
+// }
+
+// .d-list {
+//     display: flex;
+//     justify-content: space-around;
+//     flex-wrap: wrap;
+// }
+
+// .board-lists {
+//     display: flex;
+// }
+
+// .board-list {
+//     margin: 10px;
+//     padding: 10px;
+//     width: 200px;
+//     border: 1px solid red;
+//     &__wrapper {
+//         display: flex;
+//         align-items: flex-start;
+//     }
+// }
+
+// .card {
+//     margin: 10px;
+//     padding: 10px;
+//     background: seashell;
+// }
+
+// body {
+//     background: #f8f8f8;
+// }
+
+@import 'components/dashboard/_boards-list';
+@import 'components/dashboard/_board-item';
+
+@import 'components/board/_board-header';
+@import 'components/board/_board-lists';
+@import 'components/board/_card';
+@import 'components/board/_new-card';
+@import 'components/board/_card-edit';
+@import 'components/board/_list';
+@import 'components/board/_new-list';
+
+@import 'components/buttons/_buttons'; 
+
+@import 'components/inputs/_add-board-input';
+
+@import 'components/common/_theme-radio';

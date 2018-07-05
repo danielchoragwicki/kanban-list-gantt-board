@@ -1,0 +1,31 @@
+@mixin flex($center: both) {
+    display: flex;
+    flex-wrap: wrap;
+    @if $center == 'vertical' {
+        align-items: center;
+      }
+      @else if $center == 'horizontal' {
+        justify-content: center;
+      }
+      @else if $center == 'both' {
+        justify-content: center;
+        align-items: center;
+      }
+}
+
+@mixin transition($one: all, $two: .2s, $three: ease) {
+  transition: $one $two $three;
+}
+
+@mixin events {
+  &:hover {
+    @content;
+  }
+  &:active {
+    @content;
+  }
+  &:focus {
+    outline: 0;
+    @content;
+  }
+}

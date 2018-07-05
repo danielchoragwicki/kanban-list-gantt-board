@@ -1,0 +1,55 @@
+.card {
+    background: $white;
+    border-radius: $border-radius;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 4px 4px 5px rgba(30, 30, 30, 0.08);
+    position: relative;
+    @include events {
+        button {
+            transform: scale(1);
+        }
+    }
+    &__title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+    &__dates {
+        color: $gray;
+        font-size: 14px;
+    }
+    &__date {
+        margin: 0 8px;
+    }
+    &__icon {
+        color: $gray;
+        font-size: 16px;
+        &--desc {
+            margin-right: 20px;
+            color: $light;
+        }
+        &--calendar {
+            color: $light;
+        }
+    }
+    &__edit-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 5px 10px;
+        border-radius: $border-radius;
+        border: none;
+        background: $light;
+        cursor: pointer;
+        opacity: .5;
+        @include transition;
+        transform: scale(0);
+        @include events {
+            opacity: 1;
+        }
+    }
+}

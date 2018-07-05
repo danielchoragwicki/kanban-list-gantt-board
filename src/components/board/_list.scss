@@ -1,0 +1,40 @@
+.list {
+    flex: 0 1 25%;
+    padding: 0 15px;
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 5px 5px 5px;
+    }
+    &__title {
+        flex: 1;
+        margin-right: 15px;
+        background: none;
+        color: $white;
+        font-weight: 600;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        padding: 10px 15px;
+        font-size: 20px;
+        @include transition;
+        @include events {
+            border-color: $white;
+        }
+    }
+    &__del-button {
+        padding: 5px 10px;
+        border-radius: $border-radius;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: $white;
+        @include transition;
+        @include events {
+            color: $gray;
+            background: $white;
+        }
+    }
+    &__icon {
+        font-size: 18px;
+    }
+}
