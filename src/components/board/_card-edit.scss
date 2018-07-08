@@ -1,12 +1,12 @@
 .card-edit {
-    position: absolute;
+    position: fixed;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     z-index: 999;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     padding: 50px;
     height: 100vh;
     width: 100vw;
@@ -27,6 +27,10 @@
         padding: 50px;
         position: relative;
         width: 500px;
+        margin-top: 50px;
+        @include respond-to(xs) {
+            width: 100%;
+        }
     }
     &__form {
         display: flex;
@@ -69,6 +73,10 @@
         align-items: center;
         justify-content: space-between;
         padding-top: 20px;
+        flex-wrap: wrap;
+        @include respond-to(xs) {
+            justify-content: center;
+        }
     }
     &__exit-button {
         position: absolute;

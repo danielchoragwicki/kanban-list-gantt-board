@@ -84,11 +84,9 @@ class Board extends Component {
                     board={this.props.board} 
                     display={this.state.display}
                     handleUpdate={this.handleUpdate} />
-                <div className="board-list__wrapper">
-                    <BoardLists 
-                        lists={this.state.board.lists} 
-                        handleListsUpdate={this.handleListsUpdate} />
-                </div>
+                <BoardLists 
+                    lists={this.state.board.lists} 
+                    handleListsUpdate={this.handleListsUpdate} />
             </div>
         )
     }

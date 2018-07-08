@@ -3,13 +3,10 @@
     width: 45px;
     height: 45px;
     border-radius: $border-radius;
-    margin-right: 20px;
+    margin: 10px;
     cursor: pointer;
     position: relative;
     box-shadow: 4px 4px 4px rgba(30, 30, 30, 0.08), inset 0 0 5px rgba(30, 30, 30, 0.1);
-    &:last-child {
-        margin-right: 0;
-    }
     &__input {
         display: none;
         &:checked ~ .theme-radio__icon {

@@ -1,6 +1,8 @@
 .new-list {
-    flex: 0 1 25%;
-    padding: 0 15px;
+    padding-right: 60px;
+    @include respond-to(xs) {
+        padding-right: 25px;
+    }
     &__input {
         width: 100%;
         background: none;

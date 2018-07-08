@@ -42,7 +42,7 @@ class App extends Component {
                           handleCreate={this.handleCreate} 
                           boards={this.state.boards} 
                           {...props}/> 
-                      : <div>Loading...</div> 
+                      : <div className="loader">Loading...</div> 
                   )
                 }/>
                 <Route path="/board/:id" 

@@ -2,6 +2,15 @@
     width: 25%;
     height: 200px;
     padding: 15px;
+    @include respond-to(lg) {
+        width: 33.33333%;
+    }
+    @include respond-to(md) {
+        width: 50%;
+    }
+    @include respond-to(xs) {
+        width: 100%;
+    }
     &__link {
         background-color: #93a5cf;
         height: 100%;

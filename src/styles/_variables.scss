@@ -6,9 +6,13 @@ $red: #ff0844;
 $gray: #808080;
 $light: #cccccc;
 
-// -- THEMES 
-
-
 // -- OTHERS 
 $border-radius: 5px;
 
+$breakpoints: (
+    'xs': (max-width: 575px),
+    'sm': (max-width: 767px),
+    'md': (max-width: 991px),
+    'lg': (max-width: 1199px),
+    'xl': (min-width: 1200px)
+);

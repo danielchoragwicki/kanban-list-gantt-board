@@ -69,15 +69,15 @@ class Dashboard extends Component {
   }
   handleErrorSubmit = e => {
     e.preventDefault()
+    alert('Empty input. Add some text.')
   }
   render () {
     const {currentBoard, boards, errSubmit, isInputOpen} = this.state
-    const submit = currentBoard.name.length > config.MAX_BOARD_TITLE_LENGTH 
-      || currentBoard.name.length < config.MIN_BOARD_TITLE_LENGTH 
+    const submit = currentBoard.name === '' 
       ? this.handleErrorSubmit
       : this.handleSubmit
     return (
-      <div className="container">
+      <div className="dashboard">
           <BoardsList 
             boards={boards} 
             handleClick={this.handleClick} />

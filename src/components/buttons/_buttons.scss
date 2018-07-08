@@ -6,7 +6,7 @@
     font-size: 18px;
     padding: 8px 20px; 
     font-weight: 600;
-    margin: 0 15px;
+    margin: 10px 15px;
     cursor: pointer;
     @include transition;
     @include events {
@@ -39,12 +39,6 @@
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 10px;
-    }
-    &--add {
-
-    }
-    &--disabled {
-
     }
     &--delete {
         background: $red;

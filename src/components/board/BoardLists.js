@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import List from  './List'
 import NewList from './NewList'
 import { generateId, addItem, updateList, removeItem } from '../../utils/helpers'
+import { Scrollbars } from 'react-custom-scrollbars';
  
 class BoardLists extends Component {
   state = {
@@ -32,14 +33,18 @@ class BoardLists extends Component {
   }
   render() {
     return (
-      <div className="board-lists">
-        {this.props.lists.map(list => {
-          return <List handleListChange={this.handleListChange} handleRemove={this.handleRemove} key={list.id} {...list}/>
-        })}
-        <NewList
-          newListName={this.state.newListName}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit} />
+      <div className="board-lists__wrapper">
+        <Scrollbars>
+          <div className="board-lists">
+              {this.props.lists.map(list => {
+                return <List handleListChange={this.handleListChange} handleRemove={this.handleRemove} key={list.id} {...list}/>
+              })}
+              <NewList
+                newListName={this.state.newListName}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit} />
+          </div>
+        </Scrollbars>
       </div>
     )
   }

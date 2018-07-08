@@ -1,6 +1,12 @@
 .list {
-    flex: 0 1 25%;
+    flex: 0 0 400px;
     padding: 0 15px;
+    &:first-child {
+        margin-left: 60px;
+        @include respond-to(xs) {
+            margin-left: 25px;
+        }
+    }
     &__header {
         display: flex;
         align-items: center;

@@ -1,4 +1,16 @@
 .board-lists {
-    padding: 35px 100px;
+    padding: 35px 0;
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    &__wrapper {
+        width: 100vw;
+        height: calc(100vh - 120px);
+        @include respond-to(lg) {
+            height: calc(100vh - 190px);
+        } 
+        @include respond-to(md) {
+            height: calc(100vh - 275px);
+        } 
+    }
 }

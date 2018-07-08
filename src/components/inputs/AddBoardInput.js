@@ -35,7 +35,7 @@ class AddBoardInput extends React.Component {
         // this.handleError()
     }
     render () {
-        const {errSubmit, handleClick, handleSubmit, handleRadioChange, handleInputChange, currentBoard, handleDelete} = this.props;
+        const {handleClick, handleSubmit, handleRadioChange, currentBoard, handleDelete} = this.props;
         return (
             <div className="addboard__overlay">
                 <form onSubmit={handleSubmit}>
