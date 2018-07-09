@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import AddBoardInput from '../components/inputs/AddBoardInput'
 import BoardsList from '../components/dashboard/BoardsList'
 import { generateId, addItem } from '../utils/helpers'
-import { config } from '../utils/config'
 
 class Dashboard extends Component {
   state = {

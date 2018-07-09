@@ -2,11 +2,11 @@
   "boards": [
     {
       "id": "bd5kxlu3e4k",
-      "name": "First",
-      "theme": "New Life",
+      "name": "First board",
+      "theme": "Malibu Beach",
       "lists": [
         {
-          "name": "First",
+          "name": "First list",
           "items": [
             {
               "name": "Card",
@@ -38,6 +38,19 @@
             }
           ],
           "id": "9t0cgqrjwg"
+        },
+        {
+          "name": "Second list",
+          "items": [
+            {
+              "name": "Task",
+              "desc": "",
+              "startDate": "",
+              "endDate": "",
+              "id": "eh6wtiejma8"
+            }
+          ],
+          "id": "8yatefczigh"
         }
       ]
     },

@@ -4,8 +4,6 @@ import Card from './Card'
 import NewCard from './NewCard'
 import ListDeleteButton from '../buttons/ListDeleteButton'
 import { generateId, addItem, updateList, removeItem } from '../../utils/helpers'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 class List extends Component {
   state = {
@@ -117,7 +115,6 @@ class List extends Component {
           <div className="list__header">
               <input onChange={this.handleChange} onBlur={this.handleSubmit} className="list__title" value={this.state.list.name}/>
               <ListDeleteButton theme="list" handleRemove={() => this.props.handleRemove(this.props.id)} />
-            {/* <button type="button" className="list__del-button" onClick={() => this.props.handleRemove(this.props.id)}><FontAwesomeIcon className="list__icon" icon={faTrashAlt}/></button> */}
           </div>
         </form>
         {this.props.items.map(card => { 

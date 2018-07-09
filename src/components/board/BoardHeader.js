@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"
 import ThemeButton from '../buttons/ThemeButton'
 import DeleteButton from '../buttons/DeleteButton'
-import { saveBoard } from '../../utils/service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -56,7 +55,7 @@ class BoardHeader extends React.Component {
     }
     
     render() {
-        const {handleDisplayChange, board, id, name, handleRemove, display} = this.props 
+        const {handleDisplayChange, id, handleRemove, display} = this.props 
         return (
             <div className="board-header__wrapper">
                 <header className="board-header">
