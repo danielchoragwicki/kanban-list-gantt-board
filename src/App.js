@@ -29,7 +29,7 @@ class App extends Component {
     this.setState({boards: upadtedBoard})
     saveBoards(upadtedBoard)
   }
-  render() {
+  render() { 
     return (
       <BrowserRouter>
             <Switch>
@@ -38,8 +38,9 @@ class App extends Component {
                     boards={this.state.boards} 
                     {...props}/>)
                 }/>
-                <Route path="/board/:id" 
+                <Route path={process.env.PUBLIC_URL + '/board/:id'} 
                 render={props => {
+                  if (this.state.boards.length > 0) {
                     const ifCorrectID = findById(props.match.params.id, this.state.boards)
                     return (ifCorrectID 
                       ? <Board id={props.match.params.id} 
@@ -47,6 +48,9 @@ class App extends Component {
                           handleRemove={this.handleRemove} 
                           updatedBoard={this.updatedBoard} /> 
                       : <Redirect to={process.env.PUBLIC_URL + '/'} />)
+                    } else {
+                      <div>Loading...</div>
+                    }
                   }
                 }/>
                 <Redirect to={process.env.PUBLIC_URL + '/'}/>
