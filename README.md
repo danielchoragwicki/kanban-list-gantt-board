@@ -2,6 +2,8 @@
 
 Project for learning React
 
+**[Live preview](https://whitecohle.github.io/kanban-list-gantt-board)**
+
 Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
 
 <p align="center">
