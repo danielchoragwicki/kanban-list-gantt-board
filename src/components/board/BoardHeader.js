@@ -59,7 +59,7 @@ class BoardHeader extends React.Component {
         return (
             <div className="board-header__wrapper">
                 <header className="board-header">
-                    <Link className="back-link" to="/"><FontAwesomeIcon icon={faArrowLeft}/></Link>
+                    <Link className="back-link" to={process.env.PUBLIC_URL + '/'}><FontAwesomeIcon icon={faArrowLeft}/></Link>
                     <div className="board-header__inner">
                         <h1 className="board-header__title">
                             <form onSubmit={this.handleSubmit}>

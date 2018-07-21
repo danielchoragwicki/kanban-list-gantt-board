@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <BrowserRouter>
             <Switch>
-                <Route exact path="/" render={props => (<Dashboard 
+                <Route exact path={process.env.PUBLIC_URL + '/'} render={props => (<Dashboard 
                     handleCreate={this.handleCreate} 
                     boards={this.state.boards} 
                     {...props}/>)
@@ -46,10 +46,10 @@ class App extends Component {
                           board={ifCorrectID} 
                           handleRemove={this.handleRemove} 
                           updatedBoard={this.updatedBoard} /> 
-                      : <Redirect to="/" />)
+                      : <Redirect to={process.env.PUBLIC_URL + '/'} />)
                   }
                 }/>
-                <Redirect to="/"/>
+                <Redirect to={process.env.PUBLIC_URL + '/'}/>
             </Switch>
         </BrowserRouter>
     );
