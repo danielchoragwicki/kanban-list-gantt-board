@@ -1,6 +1,7 @@
 # Kanban-list-gantt Board [in progress]
 
 Project for learning React
+
 Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
 
 <p align="center">
@@ -13,12 +14,14 @@ Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
 - Sass (with BEM methodology)
 - Webpack
 - Babel
+- Localstorage
 
 ### Features
 
  - Creating, editing and removing: boards, lists, cards
  - Changing themes
  - Editable cards with date and description
+ - Saving into Localstorage
 
 ### Next to do
 

@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import AddBoardInput from '../components/inputs/AddBoardInput'
 import BoardsList from '../components/dashboard/BoardsList'
-import { generateId, addItem } from '../utils/helpers'
+import { generateId } from '../utils/helpers'
+import { deleteBoards } from '../utils/service'
 
 class Dashboard extends Component {
   state = {
-    boards: [],
     isInputOpen: false,
     errSubmit: false,
     currentBoard: {
         name: '',
         theme: 'New Life'
     }
-  }
-  componentDidMount() {
-    this.setState({boards: this.props.boards})
   }
   handleClick = e => {
     if(e.keyCode === 27 && this.state.isInputOpen) {
@@ -54,9 +51,7 @@ class Dashboard extends Component {
         theme: this.state.currentBoard.theme,
         lists: []
     }
-    const updatedBoards = addItem(this.state.boards, newBoard);
     this.setState({
-        boards: updatedBoards,
         isInputOpen: false,
         errSubmit: false,
         currentBoard: {
@@ -70,13 +65,19 @@ class Dashboard extends Component {
     e.preventDefault()
     alert('Empty input. Add some text.')
   }
+  handleDeleteLocal = e => {
+    deleteBoards()
+    window.location.reload()
+  }
   render () {
-    const {currentBoard, boards, errSubmit, isInputOpen} = this.state
+    const { currentBoard, errSubmit, isInputOpen } = this.state
+    const { boards } = this.props
     const submit = currentBoard.name === '' 
       ? this.handleErrorSubmit
       : this.handleSubmit
     return (
       <div className="dashboard">
+          <button className="delete-local" onClick={this.handleDeleteLocal}>Delete localStorage</button>
           <BoardsList 
             boards={boards} 
             handleClick={this.handleClick} />

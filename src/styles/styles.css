@@ -49,6 +49,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.delete-local {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease; }
+  .delete-local:hover {
+    color: #ff0844; }
+  .delete-local:active {
+    color: #ff0844; }
+  .delete-local:focus {
+    outline: 0;
+    color: #ff0844; }
+
 * {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif; }
