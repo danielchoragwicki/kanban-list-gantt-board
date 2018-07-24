@@ -324,9 +324,12 @@ body {
   background: #ffffff;
   border-radius: 5px;
   padding: 20px;
-  margin: 15px 0;
   box-shadow: 4px 4px 5px rgba(30, 30, 30, 0.08);
   position: relative; }
+  .card__wrapper {
+    padding: 12px 0px; }
+    .card__wrapper--active .card {
+      background: #f2f2f2; }
   .card:hover button {
     transform: scale(1); }
   .card:active button {
@@ -504,7 +507,11 @@ body {
 
 .list {
   flex: 0 0 400px;
-  padding: 0 15px; }
+  padding: 0 15px;
+  transition: all 0.2s ease;
+  border-radius: 5px; }
+  .list--drag-over {
+    background: rgba(255, 255, 255, 0.3); }
   .list:first-child {
     margin-left: 60px; }
     @media (max-width: 575px) {

@@ -13,6 +13,7 @@ Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
 ### Tech stack
 
 - React (+ [prop-types](https://github.com/facebook/prop-types), [react-router](https://github.com/ReactTraining/react-router), [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars), [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+- [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
 - Sass (with BEM methodology)
 - Webpack
 - Babel
@@ -24,10 +25,11 @@ Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
  - Changing themes
  - Editable cards with date and description
  - Saving into Localstorage
+ - Drag&Drop Cards
 
 ### Next to do
 
- - Drag & drop 
+ - Drag & drop lists
  - List and Gantt display (Like this: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board))
  - Redux
  - Sorting lists by name, priority, start and end date

@@ -4,6 +4,7 @@ import Card from './Card'
 import NewCard from './NewCard'
 import ListDeleteButton from '../buttons/ListDeleteButton'
 import { generateId, addItem, updateList, removeItem } from '../../utils/helpers'
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 class List extends Component {
   state = {
@@ -110,21 +111,42 @@ class List extends Component {
   }
   render() {
     return (
-      <div className="list">
-        <form onSubmit={this.handleSubmit}>
-          <div className="list__header">
-              <input onChange={this.handleChange} onBlur={this.handleSubmit} className="list__title" value={this.state.list.name}/>
-              <ListDeleteButton theme="list" handleRemove={() => this.props.handleRemove(this.props.id)} />
+      <Droppable droppableId={this.props.id}>
+        {(provided, snapshot) => (
+          <div className={`list${snapshot.isDraggingOver ? ' list--drag-over' : ''}`}>
+            <form onSubmit={this.handleSubmit}>
+              <div className="list__header">
+                  <input onChange={this.handleChange} onBlur={this.handleSubmit} className="list__title" value={this.state.list.name}/>
+                  <ListDeleteButton theme="list" handleRemove={() => this.props.handleRemove(this.props.id)} />
+              </div>
+            </form>
+            <div ref={provided.innerRef}>
+            {this.props.items.map((card, index) => ( 
+              <Draggable
+                  key={card.id}
+                  draggableId={card.id}
+                  index={index}>
+                    {(provided, snapshot) => (
+                      <div
+                        className={snapshot.isDragging ? 'card__wrapper card__wrapper-active' : 'card__wrapper'}
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        style={provided.draggableProps.style}>
+                        <Card key={card.id} {...card} handleCardRemove={this.handleCardRemove} handleCardEdit={this.handleCardEdit}/>
+                      </div>
+                    )}
+              </Draggable>
+            ))}
+            {provided.placeholder}
+            <NewCard 
+              newCard={this.state.newCard} 
+              handleChange={this.handleCardChange}
+              handleSubmit={this.handleCardSubmit}/>
+            </div>
           </div>
-        </form>
-        {this.props.items.map(card => { 
-          return <Card key={card.id} {...card} handleCardRemove={this.handleCardRemove} handleCardEdit={this.handleCardEdit}/>
-        })}
-        <NewCard 
-          newCard={this.state.newCard} 
-          handleChange={this.handleCardChange}
-          handleSubmit={this.handleCardSubmit}/>
-      </div>
+        )}
+      </Droppable>
     )
   }
 }

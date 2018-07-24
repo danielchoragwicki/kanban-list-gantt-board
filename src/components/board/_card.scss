@@ -2,9 +2,14 @@
     background: $white;
     border-radius: $border-radius;
     padding: 20px;
-    margin: 15px 0;
     box-shadow: 4px 4px 5px rgba(30, 30, 30, 0.08);
     position: relative;
+    &__wrapper {
+        padding: 12px 0px;
+        &--active .card {
+            background: lighten($light, 15);
+        }
+    }
     @include events {
         button {
             transform: scale(1);

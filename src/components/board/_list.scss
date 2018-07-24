@@ -1,6 +1,11 @@
 .list {
     flex: 0 0 400px;
     padding: 0 15px;
+    @include transition;
+    border-radius: $border-radius;
+    &--drag-over {
+        background: transparentize($white, 0.7);
+    }
     &:first-child {
         margin-left: 60px;
         @include respond-to(xs) {
