@@ -4,7 +4,7 @@ import List from  './List'
 import NewList from './NewList'
 import { generateId, addItem, updateList, removeItem, findById, reorder, move } from '../../utils/helpers'
 import { Scrollbars } from 'react-custom-scrollbars';
-import { DragDropContext } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 class BoardLists extends Component {
   state = {
@@ -39,7 +39,14 @@ class BoardLists extends Component {
         return;
     }
 
-    if (source.droppableId === destination.droppableId) {
+    if (source.droppableId === this.props.id) {
+      const items = reorder(
+        this.props.lists,
+        source.index,
+        destination.index
+      )
+      this.props.handleListsUpdate(items)
+    } else if (source.droppableId === destination.droppableId) {
         const list = findById(source.droppableId, this.props.lists)
         const items = reorder(
             list.items,
@@ -74,28 +81,45 @@ class BoardLists extends Component {
   }
   render() {
     return (
-      <div className="board-lists__wrapper">
-        <Scrollbars>
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <div className="board-lists">
-                {this.props.lists.map(list => (
-
-                  <List handleListChange={this.handleListChange} handleRemove={this.handleRemove} key={list.id} {...list}/>
-                
-                ))}
-                <NewList
-                  newListName={this.state.newListName}
-                  handleChange={this.handleChange}
-                  handleSubmit={this.handleSubmit} />
-            </div>
-          </DragDropContext>
-        </Scrollbars>
-      </div>
+      <DragDropContext onDragEnd={this.onDragEnd}>
+        <div className="board-lists__wrapper">
+          {/* <Scrollbars> */}
+              <Droppable droppableId={this.props.id} direction="horizontal" type="list">
+              {(provided, snapshot) => (
+                <div
+                  className="board-lists"
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {this.props.lists.map((list, index) => (
+                    <Draggable key={list.id} draggableId={list.id} index={index} type="list">
+                      {(provided, snapshot) => (
+                        <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}>
+                          <List handleListChange={this.handleListChange} handleRemove={this.handleRemove} key={list.id} {...list}/>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                  <NewList
+                    newListName={this.state.newListName}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit} />
+                </div>
+              )}
+              </Droppable>
+          {/* </Scrollbars> */}
+        </div>
+      </DragDropContext>
     )
   }
 } 
 
 BoardLists.propTypes = {
+    id: PropTypes.string.isRequired,
     lists: PropTypes.array.isRequired,
     handleListsUpdate: PropTypes.func.isRequired
 }

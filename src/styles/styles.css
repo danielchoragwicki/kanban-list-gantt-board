@@ -306,10 +306,12 @@ body {
       margin-right: 0; }
 
 .board-lists {
-  padding: 35px 0;
+  padding: 35px 0 35px 20px;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow-x: scroll;
+  height: 100%; }
   .board-lists__wrapper {
     width: 100vw;
     height: calc(100vh - 120px); }
@@ -378,7 +380,7 @@ body {
       opacity: 1; }
 
 .new-card {
-  margin: 15px 0; }
+  padding: 15px 0; }
   .new-card__input {
     width: 100%;
     background: #ffffff;
@@ -512,11 +514,6 @@ body {
   border-radius: 5px; }
   .list--drag-over {
     background: rgba(255, 255, 255, 0.3); }
-  .list:first-child {
-    margin-left: 60px; }
-    @media (max-width: 575px) {
-      .list:first-child {
-        margin-left: 25px; } }
   .list__header {
     display: flex;
     align-items: center;
@@ -559,6 +556,10 @@ body {
       background: #ffffff; }
   .list__icon {
     font-size: 18px; }
+    .list__icon--hand {
+      color: #ffffff;
+      margin-right: 15px;
+      font-size: 20px; }
 
 .new-list {
   padding-right: 60px; }

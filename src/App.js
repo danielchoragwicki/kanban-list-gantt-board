@@ -40,7 +40,6 @@ class App extends Component {
                 }/>
                 <Route path="/board/:id" 
                 render={props => {
-                  if (this.state.boards.length > 0) {
                     const ifCorrectID = findById(props.match.params.id, this.state.boards)
                     return (ifCorrectID 
                       ? <Board id={props.match.params.id} 
@@ -48,9 +47,6 @@ class App extends Component {
                           handleRemove={this.handleRemove} 
                           updatedBoard={this.updatedBoard} /> 
                       : <Redirect to='/' />)
-                    } else {
-                      return <div>Loading...</div>
-                    }
                   }
                 }/>
                 <Redirect to='/'/>

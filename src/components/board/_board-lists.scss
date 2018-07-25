@@ -1,8 +1,10 @@
 .board-lists {
-    padding: 35px 0;
+    padding: 35px 0 35px 20px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    overflow-x: scroll;
+    height: 100%;
     &__wrapper {
         width: 100vw;
         height: calc(100vh - 120px);

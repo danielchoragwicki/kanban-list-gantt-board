@@ -85,6 +85,7 @@ class Board extends Component {
                     display={this.state.display}
                     handleUpdate={this.handleUpdate} />
                 <BoardLists 
+                    id={this.props.id}
                     lists={this.state.board.lists} 
                     handleListsUpdate={this.handleListsUpdate} />
             </div>

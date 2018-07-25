@@ -25,11 +25,10 @@ Inspiration: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board)
  - Changing themes
  - Editable cards with date and description
  - Saving into Localstorage
- - Drag&Drop Cards
+ - Drag&Drop Cards/Lists
 
 ### Next to do
 
- - Drag & drop lists
  - List and Gantt display (Like this: [Tasks Board](https://dribbble.com/shots/3846682-Tasks-Board))
  - Redux
  - Sorting lists by name, priority, start and end date

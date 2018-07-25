@@ -5,6 +5,8 @@ import NewCard from './NewCard'
 import ListDeleteButton from '../buttons/ListDeleteButton'
 import { generateId, addItem, updateList, removeItem } from '../../utils/helpers'
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandPaper } from '@fortawesome/free-solid-svg-icons'
 
 class List extends Component {
   state = {
@@ -111,18 +113,20 @@ class List extends Component {
   }
   render() {
     return (
-      <Droppable droppableId={this.props.id}>
+      <Droppable droppableId={this.props.id} type="card">
         {(provided, snapshot) => (
           <div className={`list${snapshot.isDraggingOver ? ' list--drag-over' : ''}`}>
             <form onSubmit={this.handleSubmit}>
               <div className="list__header">
                   <input onChange={this.handleChange} onBlur={this.handleSubmit} className="list__title" value={this.state.list.name}/>
+                  <FontAwesomeIcon className="list__icon list__icon--hand" icon={faHandPaper}/>
                   <ListDeleteButton theme="list" handleRemove={() => this.props.handleRemove(this.props.id)} />
               </div>
             </form>
             <div ref={provided.innerRef}>
             {this.props.items.map((card, index) => ( 
               <Draggable
+                  type="card"
                   key={card.id}
                   draggableId={card.id}
                   index={index}>

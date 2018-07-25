@@ -6,12 +6,6 @@
     &--drag-over {
         background: transparentize($white, 0.7);
     }
-    &:first-child {
-        margin-left: 60px;
-        @include respond-to(xs) {
-            margin-left: 25px;
-        }
-    }
     &__header {
         display: flex;
         align-items: center;
@@ -47,5 +41,10 @@
     }
     &__icon {
         font-size: 18px;
+        &--hand {
+            color: $white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
     }
 }
