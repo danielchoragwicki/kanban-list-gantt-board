@@ -7,6 +7,7 @@ import { generateId, addItem, updateList, removeItem } from '../../utils/helpers
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandPaper } from '@fortawesome/free-solid-svg-icons'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 class List extends Component {
   state = {
@@ -123,7 +124,9 @@ class List extends Component {
                   <ListDeleteButton theme="list" handleRemove={() => this.props.handleRemove(this.props.id)} />
               </div>
             </form>
-            <div ref={provided.innerRef}>
+            {/* <Scrollbars> */}
+            <div className="list__cards-wrapper" ref={provided.innerRef}>
+            
             {this.props.items.map((card, index) => ( 
               <Draggable
                   type="card"
@@ -147,7 +150,9 @@ class List extends Component {
               newCard={this.state.newCard} 
               handleChange={this.handleCardChange}
               handleSubmit={this.handleCardSubmit}/>
+              
             </div>
+            {/* </Scrollbars> */}
           </div>
         )}
       </Droppable>

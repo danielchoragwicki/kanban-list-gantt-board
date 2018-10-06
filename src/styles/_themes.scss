@@ -1,15 +1,40 @@
 .night-fade {
-    background-image: linear-gradient(to top right, #a18cd1 0%, #fbc2eb 100%);
+    & .theme-background {
+        background-image: linear-gradient(to top right, #a18cd1 0%, #fbc2eb 100%);
+    }
+    &.theme-radio, &.board-item__link {
+        background-image: linear-gradient(to top right, #a18cd1 0%, #fbc2eb 100%);
+    }
 }
 .sunny-morning {
-    background-image: linear-gradient(to top right, #fda085 0%, #f6d365 100%);
+    & .theme-background {
+        background-image: linear-gradient(to top right, #fda085 0%, #f6d365 100%);
+    }
+    &.theme-radio, &.board-item__link {
+        background-image: linear-gradient(to top right, #fda085 0%, #f6d365 100%);
+    }
 }
 .new-life {
-    background-image: linear-gradient(to top right, #43e97b 0%, #38f9d7 100%);
+    & .theme-background {
+        background-image: linear-gradient(to top right, #43e97b 0%, #38f9d7 100%);
+    }
+    &.theme-radio, &.board-item__link {
+        background-image: linear-gradient(to top right, #43e97b 0%, #38f9d7 100%);
+    }
 }
 .malibu-beach {
-    background-image: linear-gradient(to top right, #4facfe 0%, #00f2fe 100%);
+    & .theme-background {
+        background-image: linear-gradient(to top right, #4facfe 0%, #00f2fe 100%);
+    }
+    &.theme-radio, &.board-item__link {
+        background-image: linear-gradient(to top right, #4facfe 0%, #00f2fe 100%);
+    }
 }
 .love-kiss {
-    background-image: linear-gradient(to top right, #ff0844 0%, #ffb199 100%);
+    & .theme-background {
+        background-image: linear-gradient(to top right, #ff0844 0%, #ffb199 100%);
+    }
+    &.theme-radio, &.board-item__link {
+        background-image: linear-gradient(to top right, #ff0844 0%, #ffb199 100%);
+    }
 }

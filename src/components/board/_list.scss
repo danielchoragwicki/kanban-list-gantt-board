@@ -1,15 +1,21 @@
 .list {
     flex: 0 0 400px;
-    padding: 0 15px;
     @include transition;
     border-radius: $border-radius;
+    height: 100%;
     &--drag-over {
         background: transparentize($white, 0.7);
+    }
+    &__cards-wrapper {
+        overflow-y: auto;
+        max-height: 100%;
+        padding: 0 15px;
     }
     &__header {
         display: flex;
         align-items: center;
         padding: 0 5px 5px 5px;
+        padding: 0 15px 5px 15px;
     }
     &__title {
         flex: 1;

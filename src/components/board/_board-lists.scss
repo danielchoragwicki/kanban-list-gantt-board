@@ -3,11 +3,15 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    overflow-x: scroll;
+    // overflow-x: auto;
+    // overflow-y: hidden;
     height: 100%;
     &__wrapper {
         width: 100vw;
         height: calc(100vh - 120px);
+        & > div > div {
+            height: 100%;
+        }
         @include respond-to(lg) {
             height: calc(100vh - 190px);
         } 

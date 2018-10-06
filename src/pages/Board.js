@@ -88,6 +88,7 @@ class Board extends Component {
                     id={this.props.id}
                     lists={this.state.board.lists} 
                     handleListsUpdate={this.handleListsUpdate} />
+                <div className="theme-background"></div>
             </div>
         )
     }

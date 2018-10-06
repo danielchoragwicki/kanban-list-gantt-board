@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import List from  './List'
 import NewList from './NewList'
 import { generateId, addItem, updateList, removeItem, findById, reorder, move } from '../../utils/helpers'
-import { Scrollbars } from 'react-custom-scrollbars';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 class BoardLists extends Component {
@@ -83,7 +82,6 @@ class BoardLists extends Component {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <div className="board-lists__wrapper">
-          {/* <Scrollbars> */}
               <Droppable droppableId={this.props.id} direction="horizontal" type="list">
               {(provided, snapshot) => (
                 <div
@@ -111,7 +109,6 @@ class BoardLists extends Component {
                 </div>
               )}
               </Droppable>
-          {/* </Scrollbars> */}
         </div>
       </DragDropContext>
     )
