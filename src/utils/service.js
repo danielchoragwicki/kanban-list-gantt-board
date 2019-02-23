@@ -1,3 +1,5 @@
+import localStorageMock from './localStorageMock';
+
 export const loadBoards = () => {
   if (localStorage.getItem('boards')) {
     const boards = localStorage.getItem('boards')
