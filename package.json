@@ -33,5 +33,9 @@
     "test": "react-scripts test --env=jsdom",
     "selenium": "node ./src/seleniumTest.js",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jest": "20.0.4",
+    "jest-cli": "20.0.4"
   }
 }
