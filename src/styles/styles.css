@@ -385,8 +385,7 @@ body {
     background: #cccccc;
     cursor: pointer;
     opacity: .5;
-    transition: all 0.2s ease;
-    transform: scale(0); }
+    transition: all 0.2s ease; }
     .card__edit-button:hover {
       opacity: 1; }
     .card__edit-button:active {

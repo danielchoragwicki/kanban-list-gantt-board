@@ -52,7 +52,7 @@
         cursor: pointer;
         opacity: .5;
         @include transition;
-        transform: scale(0);
+        // transform: scale(0);
         @include events {
             opacity: 1;
         }
