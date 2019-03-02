@@ -34,7 +34,9 @@ require("chromedriver");
 
         await sendKeysFunc("new-list__input", 'New list', Key.ENTER);
 
-        await sendKeysFunc('new-card__input', 'New list', Key.ENTER);
+        await sendKeysFunc('new-card__input', 'New card', Key.ENTER);
+
+        await sendKeysFunc('new-card__input', 'New card 2', Key.ENTER);
 
         await clickFunc('card__edit-button');
 
