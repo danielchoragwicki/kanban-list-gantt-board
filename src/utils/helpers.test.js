@@ -116,13 +116,113 @@ test('removeItemNotMutateTheExistingItemsList_ReturnNotMutateArray', () => {
         {id:3, name: 'three', lists: []}
     ]
     const targetId = 2;
-    const result = removeItem(startBoards, targetId)
+    const result = removeItem(startBoards, targetId);
 
-    expect(result).not.toBe(startBoards)
+    expect(result).not.toBe(startBoards);
 })
 
 //truncate
 
+test('truncateFunctionCutString_ReturnExpectedString', () => {
+    const startString = 'TestTest';
+    const expected = 'TestTe';
+    const limit = 6;
+    const result = truncate(startString, limit);
+
+    expect(result).toEqual(expected)
+})
+
+test('truncateFunctionAddAfterWordSigns_ReturnExpectedString', () => {
+    const startString = 'TestTest';
+    const expected = 'TestTe...';
+    const limit = 6;
+    const after = '...';
+    const result = truncate(startString, limit, after);
+
+    expect(result).toEqual(expected)
+})
+
 //reorder
 
+test('reorderFunctionReorderList_ReturnExpectedArray', () => {
+    const startLists = [
+        {id:1, name: 'one', cards: []},
+        {id:2, name: 'two', cards: []},
+        {id:3, name: 'three', cards: []},
+        {id:4, name: 'four', cards: []},
+        {id:5, name: 'five', cards: []}
+    ]
+    const expected = [
+        {id:1, name: 'one', cards: []},
+        {id:2, name: 'two', cards: []},
+        {id:4, name: 'four', cards: []},
+        {id:5, name: 'five', cards: []},
+        {id:3, name: 'three', cards: []}
+    ]
+    const startIndex = 2;
+    const endIndex = 4;
+    const result = reorder(startLists, startIndex, endIndex);
+
+    expect(result).toEqual(expected)
+})
+
+test('reorderNotMutateTheExistingItemsList_ReturnNotMutateArray', () => {
+    const startLists = [
+        {id:1, name: 'one', cards: []},
+        {id:2, name: 'two', cards: []},
+        {id:3, name: 'three', cards: []},
+        {id:4, name: 'four', cards: []},
+        {id:5, name: 'five', cards: []}
+    ]
+    const startIndex = 2;
+    const endIndex = 4;
+    const result = reorder(startLists, startIndex, endIndex);
+
+    expect(result).not.toBe(startLists);
+})
+
 //move
+
+test('moverFunctionMoveElementToAnotherList_ReturnExpectedObjectList', () => {
+    const source = [
+        {id:1, name: 'one', cards: []},
+        {id:2, name: 'two', cards: []},
+        {id:3, name: 'three', cards: []},
+        {id:4, name: 'four', cards: []},
+        {id:5, name: 'five', cards: []}
+    ]
+    const droppableSource = {
+        droppableId: 'source',
+        id: 1,
+    }
+    const destination = [
+        {id:6, name: 'six', cards: []},
+        {id:7, name: 'seven', cards: []},
+        {id:8, name: 'eight', cards: []},
+        {id:9, name: 'nine', cards: []},
+        {id:10, name: 'ten', cards: []}
+    ]
+    const droppableDestination = {
+        droppableId: 'destination',
+        id: 2,
+    }
+    const expected = {
+        source: [
+            {id:2, name: 'two', cards: []},
+            {id:3, name: 'three', cards: []},
+            {id:4, name: 'four', cards: []},
+            {id:5, name: 'five', cards: []}
+        ],
+        destination: [
+            {id:1, name: 'one', cards: []},
+            {id:6, name: 'six', cards: []},
+            {id:7, name: 'seven', cards: []},
+            {id:8, name: 'eight', cards: []},
+            {id:9, name: 'nine', cards: []},
+            {id:10, name: 'ten', cards: []}
+        ]
+    }
+    const result = move(source, destination, droppableSource, droppableDestination);
+
+    expect(result).toEqual(expected)
+})
